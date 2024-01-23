@@ -1,0 +1,21 @@
+image: node:latest
+
+stages:
+  - test
+
+install_dependencies:
+  stage: test
+  script:
+    - npm install
+
+playwright_tests:
+  stage: test
+  script:
+    - npx playwright test
+  artifacts:
+    when: always
+    paths:
+      - tests-results/
+    expire_in: 1 day
+  only:
+    - main
