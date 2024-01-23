@@ -3,14 +3,10 @@ image: node:latest
 stages:
   - test
 
-install_dependencies:
-  stage: test
-  script:
-    - npm ci
-
 playwright_tests:
   stage: test
   script:
+    - npm ci
     - npx playwright test
   artifacts:
     when: always
