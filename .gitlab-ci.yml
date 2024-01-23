@@ -6,7 +6,7 @@ stages:
 install_dependencies:
   stage: test
   script:
-    - npm install
+    - npm ci
 
 playwright_tests:
   stage: test
