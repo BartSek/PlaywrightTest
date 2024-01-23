@@ -10,9 +10,10 @@ playwright_tests:
     - npx playwright install --with-deps
     - npx playwright test
   artifacts:
-    when: manual
+    when: always
     paths:
       - playwright-report/
     expire_in: 1 day
   only:
     - main
+  when: manual
